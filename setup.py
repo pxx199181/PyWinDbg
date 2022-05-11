@@ -9,7 +9,7 @@ def gen_data_files(*dirs):
             results.append((root, map(lambda f:root + "/" + f, files)))
     return results
 
-data_files = gen_data_files("PyWinDbg")
+data_files = gen_data_files("PyWinDbg/lib")
 
 setup(
     name = 'PyWinDbg',
