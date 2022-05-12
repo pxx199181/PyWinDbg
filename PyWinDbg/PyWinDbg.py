@@ -187,7 +187,7 @@ class PyWinDbg():
 			return None
 
 	def dbg_valToStr(self, name, value):
-		self.send_sign_pkt(RDBG_VALTOSTR, self.p_ptr(value), name + "\x00")
+		self.send_sign_pkt(RDBG_VALTOSTR, self.p_ptr(value) + name + "\x00")
 		sign, data, size = self.recv_sign_pkt()
 		if sign == RDBG_OK:
 			return True
